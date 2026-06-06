@@ -1,0 +1,12 @@
+<div class="sitenav">
+  <a class="site-title" href="{{ "/" | relURL }}">{{ .Site.Params.author }}</a>
+  {{ if not .IsHome }}
+  <nav>
+    <ul class="menu">
+      {{ range .Site.Menus.main }}
+      <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+  {{ end }}
+</div>

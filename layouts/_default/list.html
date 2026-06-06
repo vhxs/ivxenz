@@ -1,18 +1,16 @@
 {{ partial "header.html" . }}
 
 <div class="content">
-  {{if not .IsHome }}
-  <h1>{{ .Title | markdownify }}</h1>
-  {{ end }} {{ .Content }}
+  {{ partial "sitenav.html" . }}
+  {{ .Content }}
 
-  <ul>
-    {{ $blogSection := .Site.GetPage "section" "blog" }} {{ range
-    $blogSection.Pages }}
-    <li>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>,
-      <span class="date">{{ .Date.Format "2006-01-02" }}</span>
-    </li>
+  <div class="post-list">
+    {{ $blogSection := .Site.GetPage "section" "blog" }} {{ range $blogSection.Pages }}
+    <div class="post-row">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span class="date">{{ .Date.Format "Jan 2, 2006" }}</span>
+    </div>
     {{ end }}
-  </ul>
+  </div>
 </div>
 {{ partial "footer.html" . }}

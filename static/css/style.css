@@ -12,27 +12,28 @@ body {
   background-color: #DDEEFF;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  border: 1px solid black;
+  border: 1px solid #99BBDD;
 }
 
 /* header and footer areas */
-.menu { 
-  padding: 0; 
+.menu {
+  padding: 0;
+  list-style: none;
 }
-.menu li { display: inline-block; background-color: #666;}
+.menu li { display: inline-block; margin-left: 1.2em; }
 
 .menu a {
   text-decoration: none;
-  padding: 2px;
-  border-radius: 2px;
-  background-color: #AACCEE;
+  color: #1B2A4A;
+  font-weight: 500;
 }
+.menu a:hover { color: #CC0000; }
 .menu, .article-meta, footer { text-align: left; }
 .title { font-size: 1em; }
 footer a { text-decoration: none; }
 hr {
-  border-style: solid;
-  color: black;
+  border: none;
+  border-top: 1px solid #99BBDD;
 }
 
 /* headings */
@@ -53,7 +54,7 @@ pre code { background: none; }
 
 /* misc elements */
 img, iframe, video { max-width: 100%; }
-main { hyphens: auto; }
+main { hyphens: auto; max-width: 70ch; }
 blockquote {
   background: #f9f9f9;
   border-left: 5px solid #ccc;
@@ -81,10 +82,25 @@ a i {
   color: #2255AA;
 }
 
-.header {
+.sitenav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 0.6em;
+  margin-bottom: 0.8em;
+  border-bottom: 1px solid #99BBDD;
+}
+
+.site-title {
+  font-size: 1.9em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #1B2A4A;
+  text-decoration: none;
+}
+
+.site-title:visited {
+  color: #1B2A4A;
 }
 
 .footer-links {
@@ -95,6 +111,33 @@ a i {
 footer {
   text-align: center;
   margin-top: 1em;
+}
+
+/* blog post list */
+.post-list {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+.post-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.7em 1em;
+  background-color: #EEF4FB;
+  border: 1px solid #99BBDD;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+.post-row:hover {
+  background-color: #DDEEFF;
+}
+.post-row .date {
+  font-size: 0.85em;
+  color: #445566;
+  white-space: nowrap;
+  margin-left: 1em;
 }
 
 figure {
